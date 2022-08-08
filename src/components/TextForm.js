@@ -41,7 +41,7 @@ export default function TextForm() {
             <textarea className="form-control" id="exampleFormControlTextarea1" rows="3" onChange={handleOnChange} placeholder='enter text' value={atext} ></textarea>
          </div>
       <button className='btn btn-primary' onClick={handleUpclick}>Convert to upper case</button>
-      <button className='btn btn-primary mx-5' onClick={handleLowerclick}>Convert to upper case</button>
+      <button className='btn btn-primary mx-5' onClick={handleLowerclick}>Convert to Lower case</button>
       
       
       
