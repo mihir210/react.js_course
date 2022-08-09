@@ -10,6 +10,7 @@ export default function TextForm(props) {
       let newtext = atext.toUpperCase();
       setaText(newtext);
       setHead("uppercase converted text ");
+      props.showalert("converted to upper case", "success");
    }
    const handleOnChange = (event) =>{
       setaText(event.target.value);
@@ -18,17 +19,21 @@ export default function TextForm(props) {
    const resetall = () =>{
       setaText('');
       setHead('Enter text here')
+      props.showalert("reset the text", "success")
    }
    const handleLowerclick = () =>{
       let newtext = atext.toLowerCase();
       setaText(newtext);
       setHead("lowercase converted text ");
+      props.showalert("converted to lower case", "success")
    }
    
    const handleCopy = () =>{
+      props.showalert("copiied text", "success");
       var text = document.getElementById('exampleFormControlTextarea1');
       text.select();
       navigator.clipboard.writeText(text.value);
+        
    }
    const [atext, setaText] = useState('');
    const [head, setHead] = useState('Enter the text ')
