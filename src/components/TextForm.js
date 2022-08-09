@@ -5,7 +5,7 @@ import React, { useState } from 'react'
 
 
 
-export default function TextForm() {
+export default function TextForm(props) {
    const handleUpclick = () =>{
       let newtext = atext.toUpperCase();
       setaText(newtext);
@@ -37,7 +37,7 @@ export default function TextForm() {
       <div className="container">
          
          <div className="mb-3 my-4">
-            <label htmlFor="exampleFormControlTextarea1" className="form-label ">{head}</label>
+            <label htmlFor="exampleFormControlTextarea1" className={`form-label  text-${props.mode==='dark' ? 'light':'dark'}`}>{head}</label>
             <textarea className="form-control" id="exampleFormControlTextarea1" rows="3" onChange={handleOnChange} placeholder='enter text' value={atext} ></textarea>
          </div>
       <button className='btn btn-primary' onClick={handleUpclick}>Convert to upper case</button>
@@ -49,7 +49,7 @@ export default function TextForm() {
       <button className='btn btn-primary mx-5' onClick={handleCopy}>Copy text</button>
       
       </div>
-      <div className="container my-3">
+      <div className={`container my-3 text-${props.mode==='dark' ? 'light':'dark'}`}>
 
          <p>{atext.split(' ').length} words and {atext.length} characters</p>
          <p>{0.008 *atext.split(' ').length } minutes read</p>
