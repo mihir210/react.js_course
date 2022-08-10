@@ -2,8 +2,6 @@ import React from 'react'
 import {NavLink} from 'react-router-dom';
 // import PropTypes from 'prop-types'
 
-import { Link } from 'react-router-dom';
-
 export default function Navbar(probs) {
     return ( 
       <nav className={`navbar navbar-expand-lg navbar-${probs.mode} bg-${probs.mode}`}>
