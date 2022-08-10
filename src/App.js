@@ -1,11 +1,15 @@
 // import logo from './logo.svg';
-import { useState } from 'react';
+import { useState} from 'react';
 import './App.css';
 import Navbar from './components/Navbar';
 import TextForm from './components/TextForm';
-// import About from './components/About';
+import About from './components/About';
 import Alert from './components/Alert';
 
+import {
+  Switch,
+  Route,
+} from "react-router-dom";
 function App() {
   
   const [alert, setAlert] = useState(null);
@@ -37,12 +41,17 @@ function App() {
   
   return (
     <>
-
-<Navbar title="Textutils" mode={mode} toggleMode={toggleMode}/>
+    
+    <Navbar title="Textutils" mode={mode} toggleMode={toggleMode}/>
     <Alert alert = {alert}/>
-<TextForm mode={mode} showalert={showAlert}/>
-
-      {/* <About/> */}
+      <Switch>
+        <Route exact path="/about">
+          <About/>
+        </Route>
+        <Route path="/">
+          <TextForm mode={mode} showalert={showAlert}/>
+        </Route>
+      </Switch>
     </>
   );
 }
